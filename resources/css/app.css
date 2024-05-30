@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+@layer base {
+
+    @font-face {
+        font-family: Aptly;
+        font-weight: 400;
+        src: url(/fonts/Aptly/aptly-6.ttf)
+    }
+
+    @font-face {
+        font-family: Aptly;
+        font-weight: 500;
+        src: url(/fonts/Aptly/aptly-8.ttf)
+    }
+
+
+    @font-face {
+        font-family: Aptly;
+        font-weight: 700;
+        src: url(/fonts/Aptly/aptly-9.ttf)
+    }
+
+    @font-face {
+        font-family: Neulis;
+        font-weight:400;
+        src: url(/fonts/Neulis/Neulis-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: Neulis;
+        font-weight:500;
+        src: url(/fonts/Neulis/Neulis-Medium.ttf);
+    }
+
+    @font-face {
+        font-family: Neulis;
+        font-weight:600;
+        src: url(/fonts/Neulis/Neulis-Bold.ttf);
+    }
+
+
+    @font-face {
+        font-family: Neulis;
+        font-weight:700;
+        src: url(/fonts/Neulis/Neulis-ExtraBold.ttf);
+    }
+
+    @font-face {
+        font-family: Neulis;
+        font-weight:700;
+        src: url(/fonts/Neulis/Neulis-Black.ttf);
+    }
+}
