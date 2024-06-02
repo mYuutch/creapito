@@ -14,7 +14,7 @@
     </div>
     <div>
       <ProductList v-if="filteredProducts.length" :products="filteredProducts" :links="products.links"/>
-      <p v-else>No products found.</p>
+      <p v-else class="mx-auto font-neulis text-center my-56">No products found.</p>
       <Pagination v-if="products.links" :links="products.links" class="mx-auto"/>
     </div>
   </AppLayout>

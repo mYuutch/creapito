@@ -31,26 +31,26 @@ return "/orders/" + order.id
 
 <template>
     <AppLayout>
-        <div class="max-w-7xl mx-auto py-24">
+        <div class="max-w-7xl mx-auto py-24 px-12">
             <table class="w-full mx-auto bg-white">
             <thead>
                 <tr>
                     <th class="py-2">Date</th>
-                    <th class="py-2">Total </th>
-                    <th class="py-2">Paiement</th>
-                    <th class="py-2">Livraison</th>
-                    <th class="py-2">Accès</th>
+                    <th class="py-2 hidden sm:table-cell">Total </th>
+                    <th class="py-2 hidden sm:table-cell">Paiement</th>
+                    <th class="py-2 hidden sm:table-cell">Livraison</th>
+                    <th class="py-2 hidden sm:table-cell">Accès</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="order in orders" :key="order.id">
                     <td class="border px-4 py-2">{{ formatDateToParisTime(order.created_at) }}</td>
-                    <td class="border px-4 py-2">{{ order.total_amount.toFixed(2) }} €</td>
-                    <td class="border px-4 py-2">
+                    <td class="border px-4 py-2 hidden sm:table-cell">{{ order.total_amount.toFixed(2) }} €</td>
+                    <td class="border px-4 py-2 hidden sm:table-cell">
                         <span v-if="order.payment_status == 'unpaid'">Non payé</span>
                         <span v-if="order.payment_status == 'paid'">Payé</span>
                     </td>
-                    <td class="border px-4 py-2">
+                    <td class="border px-4 py-2 hidden sm:table-cell">
                         <span v-if="order.shipping_status == 'pending'">En attente</span>
                         <span v-if="order.shipping_status == 'shipping'">En cours de livraison</span>
                         <span v-if="order.shipping_status == 'delivered'">Livré</span>

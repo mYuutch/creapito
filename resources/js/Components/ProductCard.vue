@@ -1,11 +1,12 @@
 <template>
   <div class="flex flex-col font-neulis">
-    <div class="w-full mb-4 aspect-square bg-slate-300">
-      <img v-if="product.image_url" class="h-full object-cover" :src="fullImage(product.image_url)"  alt="Product Image">
+    <div class="w-full overflow-hidden  mb-4 aspect-square bg-slate-300">
+      
+      <img v-if="product.image_url" class="h-full w-full object-cover" :src="fullImage(product.image_url)"  alt="Product Image">
     </div>
-    <Link :href="getProductLink(product)" class="mb-1 font-medium">{{ product.name }}</Link>
+    <Link :href="getProductLink(product)" class="mb-1 font-medium truncate hover:underline">{{ product.name }}</Link>
     <p class="mb-4">{{ product.price }}€</p>
-    <button @click="addToCart(product)" class="bg-[#C3A181] rounded-xl px-4 py-2 w-full xl:w-1/2 text-sm self-end text-white">Ajouter au panier</button>
+    <button @click="addToCart(product)" class="bg-[#C3A181] rounded-xl px-4 h-12 py-2 w-full xl:w-1/2 text-sm self-end text-white">Ajouter au panier</button>
   </div>
 </template>
 
@@ -28,7 +29,7 @@ const getProductLink = (product) => {
 };
 
 const fullImage = (link) => {
-  const fullUrl = `http://127.0.0.1:8000/storage/${link}`;
+  const fullUrl = `/storage/${link}`;
   console.log('Constructed full image URL:', fullUrl);
   return fullUrl;
 };

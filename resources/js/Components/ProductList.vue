@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-2 md:grid-cols-3  max-w-7xl mx-auto gap-8  px-4 sm:px-6 lg:px-8 relative">
+    <div class="grid grid-cols-1 sm:gri-cols-2 md:grid-cols-3  max-w-7xl mx-auto gap-8  px-4 sm:px-6 lg:px-8 relative">
        <Product :product="product" v-for="product in products" :key="product.id" />
     </div>
 

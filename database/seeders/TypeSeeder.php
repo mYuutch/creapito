@@ -12,6 +12,6 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Type::factory()->count(10)->create();
+        
     }
 }

@@ -37,12 +37,6 @@ class ProductResource extends Resource
                 Forms\Components\FileUpload::make('image_url')
                     ->image()
                     ->required(),
-                Forms\Components\TextInput::make('type_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('theme_id')
-                    ->required()
-                    ->numeric(),
             ]);
     }
 
@@ -61,12 +55,6 @@ class ProductResource extends Resource
                     ->money()
                     ->sortable(),
                 Tables\Columns\ImageColumn::make('image_url'),
-                Tables\Columns\TextColumn::make('type_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('theme_id')
-                    ->numeric()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -93,7 +81,8 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\TypeRelationManager::class,
+            RelationManagers\ThemeRelationManager::class,
         ];
     }
 

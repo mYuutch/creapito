@@ -59,7 +59,7 @@ function removeFromCart(product){
 
                 <div class="flex items-center gap-8">
                     <div class="h-24 w-24 bg-slate-300">
-                    <!--Image-->
+                    <img class="object-cover h-full" :src="'/storage/' + item.product.image_url" alt="">
                 </div>
                 <div class="flex flex-col">
                     <p>{{ item.product.name }}</p>

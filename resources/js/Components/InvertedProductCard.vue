@@ -3,9 +3,9 @@
       <div class="w-full mb-4 aspect-square bg-slate-300">
         <img v-if="product.image_url" class="h-full object-cover" :src="fullImage(product.image_url)"  alt="Product Image">
       </div>
-      <Link :href="getProductLink(product)" class="mb-1 font-medium text-white">{{ product.name }}</Link>
+      <Link :href="getProductLink(product)" class="mb-1 font-medium text-white truncate hover:underline">{{ product.name }}</Link>
       <p class="mb-4 text-white opacity-70">{{ product.price }}€</p>
-      <button @click="addToCart(product)" class="bg-white rounded-xl px-4 py-2 w-full xl:w-1/2 text-sm self-end text-[#C3A181]">Ajouter au panier</button>
+      <button @click="addToCart(product)" class="bg-white rounded-xl px-4 py-2 h-12 w-full xl:w-1/2 text-sm self-end text-[#C3A181]">Ajouter au panier</button>
     </div>
   </template>
   
@@ -28,7 +28,7 @@
   };
   
   const fullImage = (link) => {
-    const fullUrl = `http://127.0.0.1:8000/storage/${link}`;
+    const fullUrl = `/storage/${link}`;
     console.log('Constructed full image URL:', fullUrl);
     return fullUrl;
   };

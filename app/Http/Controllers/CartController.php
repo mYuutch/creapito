@@ -51,7 +51,7 @@ class CartController extends Controller
         $product->save();
         $cartItem->save();
     
-        return response()->json(['message' => 'Product added to cart successfully']);
+        return to_route('index');
     }
 
 
@@ -76,14 +76,17 @@ class CartController extends Controller
             if ($cartItem) {
                 // Decrease the quantity
                 $cartItem->quantity--;
+                $product->quantity++;
     
                 // Check if the quantity is 0 or less
                 if ($cartItem->quantity <= 0) {
                     $cartItem->delete();
-                    return response()->json(['message' => 'Product removed from cart successfully']);
+                    $product->save();
+                    return to_route('cart.show');
                 } else {
                     $cartItem->save();
-                    return response()->json(['message' => 'Product quantity decreased successfully']);
+                    $product->save();
+                    return to_route('cart.show');
                 }
             }
         }
@@ -103,7 +106,7 @@ class CartController extends Controller
         if ($cart) {
             // Delete all cart items
             CartItem::where('cart_id', $cart->id)->delete();
-            return response()->json(['message' => 'Cart wiped successfully']);
+            return to_route('cart.show');
         }
 
         return response()->json(['message' => 'Cart not found'], 404);

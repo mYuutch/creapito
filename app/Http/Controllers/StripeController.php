@@ -144,7 +144,7 @@ class StripeController extends Controller
             'payment_status' => 'paid',
         ]);
     
-        return Inertia::render('Welcome', ['message' => 'Paiement réussi']);
+        return to_route('orders.show');
     }
 
 }

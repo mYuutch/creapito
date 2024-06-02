@@ -36,7 +36,8 @@ const logout = () => {
         
 
         <div class="min-h-screen">
-            <nav class="bg-white border-b border-gray-100">
+            
+            <nav  class="bg-white border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between pt-12 pb-24 items-center">
@@ -44,14 +45,18 @@ const logout = () => {
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                
-                                    <ApplicationMark class="block h-24 w-auto" />
+                                    <ApplicationMark class="block h-12 sm:h-24 w-auto" />
                          
                             </div>  
                         </div>
                         
-                        <div class="flex gap-8">
+                        <div v-if="$page.props.auth.user" class="flex gap-8">
                             <Link :href="route('orders.show')"> <CustomerLogo class="h-10"/></Link>
                            <Link :href="route('cart.show')" > <CartLogo class="h-10"/></Link>     
+                        </div>
+                        <div v-else class="flex gap-8">
+                            <Link class="bg-[#C3A181] font-neulis rounded px-8 py-4 font-medium  text-white" :href="route('register')"> S'inscrire </Link>
+                            <Link class="text-[#C3A181] font-neulis rounded px-8  py-4  font-medium border-2 border-[#C3A181]    bg-white" :href="route('login')"> Se connecter </Link>      
                         </div>
                     </div>
                 </div>
