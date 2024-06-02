@@ -54,9 +54,9 @@ const logout = () => {
                             <Link :href="route('orders.show')"> <CustomerLogo class="h-10"/></Link>
                            <Link :href="route('cart.show')" > <CartLogo class="h-10"/></Link>     
                         </div>
-                        <div v-else class="flex gap-8">
-                            <Link class="bg-[#C3A181] font-neulis rounded px-8 py-4 font-medium  text-white" :href="route('register')"> S'inscrire </Link>
-                            <Link class="text-[#C3A181] font-neulis rounded px-8  py-4  font-medium border-2 border-[#C3A181]    bg-white" :href="route('login')"> Se connecter </Link>      
+                        <div v-else class="flex flex-col  md:flex-row md:gap-8 gap-2 text-center">
+                            <Link class="bg-[#C3A181] font-neulis rounded md:px-8 md:py-4 py-2 px-3  font-medium  text-white" :href="route('register')"> S'inscrire </Link>
+                            <Link class="text-[#C3A181] font-neulis rounded md:px-8  md:py-4 py-2 px-3 font-medium border-2 border-[#C3A181]    bg-white" :href="route('login')"> Se connecter </Link>      
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ const logout = () => {
                 </div>
                   
 
-                    <div class="flex gap-8 items-center justify-center text-white">
+                    <div class="flex flex-col sm:flex-row gap-8 items-center justify-center text-white">
                         <a href="#">Conditions générales de vente</a>
                         <a href="">Mentions légales</a>
                         <a href="">Mon compte</a>

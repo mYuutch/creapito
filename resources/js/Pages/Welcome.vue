@@ -35,7 +35,7 @@ initializeWeb3Forms();
     <AppLayout>
  
         <div class="w-full h-screen flex items-center justify-center">
-            <h1 class="font-neulis font-medium text-[#C3A181] text-xl sm:text-3xl lg:text-5xl xl:text-6xl">Créapito : Créez, Colorez, Enchantez!</h1>
+            <h1 class="font-neulis font-medium text-[#C3A181] text-xl sm:text-3xl lg:text-5xl xl:text-6xl text-center">Créapito : Créez, Colorez, Enchantez!</h1>
         </div>
 
         <div class="w-full mb-80">
@@ -46,7 +46,7 @@ initializeWeb3Forms();
             <div class="w-1/2 sm:w-1/3 border-t-4 border-[#C3A181]"></div>
             
             <div class="max-w-7xl flex flex-col md:flex-row mx-auto gap-8 p-12">
-            <ProductCard  v-for="product in latest" :product="product"class="w-1/3"/>
+            <ProductCard  v-for="product in latest" :product="product"class="md:w-1/3"/>
         </div>
         <div class="w-1/2 sm:w-1/3 border-t-4 ml-auto border-[#C3A181]"></div>
 
